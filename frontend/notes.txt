@@ -1,0 +1,37 @@
+Si on mets dans le fichier App.jsx ça :
+    <>
+      <nav>Navbar</nav>
+      <Outlet/>
+      <footer>Footer</footer>
+    </>
+et dans le fichier router.jsx:
+    const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <App/>,
+      children: [
+        {
+            path: "/",
+            element: <h1>Home</h1>
+        },
+        {
+            path: "/orders",
+            element: <h1>orders</h1>
+        }
+        {
+            path: "/about",
+            element: <h1>About</h1>
+        }
+      ]
+    },
+  ]);
+Alors dans le navigateur on va avoir Navbar et Footer qui sont fixes et Home, Orders, About ui changent en fonction de l'url qu'on a mis dans le navigateur
+si on va dans / on a Navbar
+                     Home
+                     footer
+Si on va dans /orders on a Navbar
+                           Orders
+                           Footer
+Si on va dans /about on a Navbar
+                          About
+                          Footer
